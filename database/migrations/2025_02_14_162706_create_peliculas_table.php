@@ -14,7 +14,7 @@ return new class extends Migration
         // Tabla de géneros
         Schema::create('generos', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
+            $table->string('descripcion')->default('Sin descripción');
             $table->timestamps();
         });
 

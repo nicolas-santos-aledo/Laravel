@@ -21,12 +21,8 @@ class GenerosController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-        	'descripcion' => 'required|string|max:255',
-    	]);
-	$genero = Generos::create($request->all());
-
-        return response()->json($genero, 201);
+	  $genero = Generos::create($request->all());
+	return response()->json($genero, 201);
     }
 
     /**
@@ -50,7 +46,7 @@ class GenerosController extends Controller
     /**
      * Eliminar un género.
      */
-    public function destroy($id)
+    public function destroy(Generos $genero)
     {
         $genero->delete();
 
